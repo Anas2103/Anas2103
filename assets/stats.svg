@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="768" height="200" viewBox="0 0 768 200">
+<title>github stats</title>
+<defs>
+  <filter id="neon" x="-40%" y="-40%" width="180%" height="180%">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
+    <feComponentTransfer in="b" result="soft"><feFuncA type="linear" slope=".45"/></feComponentTransfer>
+    <feMerge><feMergeNode in="soft"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+</defs>
+<style>
+  text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  .title { font-size: 13px; font-weight: 700; fill: #ffffff; letter-spacing: 1px; }
+  .label { font-size: 13px; fill: #7a7a7a; }
+  .value { font-size: 14px; font-weight: 700; fill: #ffffff; }
+  .in { opacity: 0; animation: in .5s ease-out forwards; }
+  @keyframes in { from { opacity: 0; transform: translateY(4px) } to { opacity: 1; transform: none } }
+  .glint { opacity: 0; animation: glint 6s infinite; }
+  @keyframes glint { 0% { opacity: 0 } 4% { opacity: 1 } 16%, 100% { opacity: 0 } }
+  
+  .grow { transform-box: fill-box; transform-origin: left; transform: scaleX(0); animation: grow .7s ease-out forwards; }
+  @keyframes grow { to { transform: scaleX(1) } }
+  .shine { animation: shine 6s 1s infinite; }
+  @keyframes shine { 0% { transform: translateX(0) } 25%, 100% { transform: translateX(400px) } }
+</style>
+<rect x=".75" y=".75" width="766.5" height="198.5" rx="14" fill="#050505" stroke="#262626" stroke-width="1.5"/>
+<linearGradient id="shine" x1="0" x2="1">
+    <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+  </linearGradient><text x="32" y="38" class="title in" filter="url(#neon)">GITHUB STATS</text><g class="in" style="animation-delay:0.15s"><rect x="32" y="63" width="6" height="6" rx="1" fill="#4a4a4a"/><rect class="glint" style="animation-delay:0.80s" x="32" y="63" width="6" height="6" rx="1" fill="#fff" filter="url(#neon)"/><text x="48" y="71" class="label">commits (last year)</text><text x="340" y="71" class="value" text-anchor="end">11</text><text class="glint value" style="animation-delay:0.80s" x="340" y="71" text-anchor="end" filter="url(#neon)">11</text></g><g class="in" style="animation-delay:0.25s"><rect x="32" y="89" width="6" height="6" rx="1" fill="#4a4a4a"/><rect class="glint" style="animation-delay:0.92s" x="32" y="89" width="6" height="6" rx="1" fill="#fff" filter="url(#neon)"/><text x="48" y="97" class="label">pull requests</text><text x="340" y="97" class="value" text-anchor="end">0</text><text class="glint value" style="animation-delay:0.92s" x="340" y="97" text-anchor="end" filter="url(#neon)">0</text></g><g class="in" style="animation-delay:0.35s"><rect x="32" y="115" width="6" height="6" rx="1" fill="#4a4a4a"/><rect class="glint" style="animation-delay:1.04s" x="32" y="115" width="6" height="6" rx="1" fill="#fff" filter="url(#neon)"/><text x="48" y="123" class="label">issues</text><text x="340" y="123" class="value" text-anchor="end">0</text><text class="glint value" style="animation-delay:1.04s" x="340" y="123" text-anchor="end" filter="url(#neon)">0</text></g><g class="in" style="animation-delay:0.45000000000000007s"><rect x="32" y="141" width="6" height="6" rx="1" fill="#4a4a4a"/><rect class="glint" style="animation-delay:1.16s" x="32" y="141" width="6" height="6" rx="1" fill="#fff" filter="url(#neon)"/><text x="48" y="149" class="label">repositories</text><text x="340" y="149" class="value" text-anchor="end">1</text><text class="glint value" style="animation-delay:1.16s" x="340" y="149" text-anchor="end" filter="url(#neon)">1</text></g><g class="in" style="animation-delay:0.55s"><rect x="32" y="167" width="6" height="6" rx="1" fill="#4a4a4a"/><rect class="glint" style="animation-delay:1.28s" x="32" y="167" width="6" height="6" rx="1" fill="#fff" filter="url(#neon)"/><text x="48" y="175" class="label">stars</text><text x="340" y="175" class="value" text-anchor="end">0</text><text class="glint value" style="animation-delay:1.28s" x="340" y="175" text-anchor="end" filter="url(#neon)">0</text></g><line x1="376" y1="30" x2="376" y2="170" stroke="#262626" stroke-width="1.5"/><text x="408" y="38" class="title in" filter="url(#neon)">MOST USED LANGUAGES</text><text x="408" y="80" class="label in">nothing to show yet</text>
+</svg>

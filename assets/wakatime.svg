@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="768" height="120" viewBox="0 0 768 120">
+<title>coding time</title>
+<defs>
+  <filter id="neon" x="-40%" y="-40%" width="180%" height="180%">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
+    <feComponentTransfer in="b" result="soft"><feFuncA type="linear" slope=".45"/></feComponentTransfer>
+    <feMerge><feMergeNode in="soft"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+</defs>
+<style>
+  text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  .title { font-size: 13px; font-weight: 700; fill: #ffffff; letter-spacing: 1px; }
+  .label { font-size: 13px; fill: #7a7a7a; }
+  .value { font-size: 14px; font-weight: 700; fill: #ffffff; }
+  .in { opacity: 0; animation: in .5s ease-out forwards; }
+  @keyframes in { from { opacity: 0; transform: translateY(4px) } to { opacity: 1; transform: none } }
+  .glint { opacity: 0; animation: glint 6s infinite; }
+  @keyframes glint { 0% { opacity: 0 } 4% { opacity: 1 } 16%, 100% { opacity: 0 } }
+  
+</style>
+<rect x=".75" y=".75" width="766.5" height="118.5" rx="14" fill="#050505" stroke="#262626" stroke-width="1.5"/>
+<text x="32" y="38" class="title in" filter="url(#neon)">CODING TIME · LAST 7 DAYS</text><text x="32" y="90" class="label in">no coding time tracked yet</text>
+</svg>
