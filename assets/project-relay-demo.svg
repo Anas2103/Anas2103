@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="380" height="40" viewBox="0 0 380 40">
+<title>Relay · Real-time Chat live demo</title>
+<defs>
+  <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+</defs>
+<style>
+  text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  .demo { font-size: 12px; font-weight: 700; fill: #98c379; }
+  .host { font-size: 11px; fill: #7EBAE4; }
+  .dot { animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 50% { opacity: .35 } }
+</style>
+<rect x=".75" y=".75" width="378.5" height="38.5" rx="12" fill="#050505" stroke="#262626" stroke-width="1.5"/>
+<circle class="dot" cx="26" cy="20" r="4" fill="#98c379" filter="url(#glow)"/>
+<text x="40" y="24" class="demo">live demo</text>
+<text x="360" y="24" class="host" text-anchor="end">relay-chat.bunbunchat.workers.dev ↗</text>
+</svg>

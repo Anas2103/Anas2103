@@ -18,6 +18,9 @@ Full stack developer. I build things for the fun of it. I use NixOS btw
 <p>
   <a href="https://github.com/Anas2103/Relay"><img src="assets/project-relay.svg" width="49%" alt="Relay · Real-time Chat: Telegram-style chat with E2EE secret chats, voice/video calls. $0 hosting. React 19 · TypeScript · Workers · Durable Objects" /></a>
   <a href="https://github.com/Anas2103/Ecommerce"><img src="assets/project-ecommerce.svg" width="49%" alt="Full Stack E-Commerce: Multi-vendor store with Stripe &amp; PayPal, FR / EN / AR (RTL), tested in CI. Laravel 12 · React 19 · Redux Toolkit · Stripe" /></a>
+  <br />
+  <a href="https://relay-chat.bunbunchat.workers.dev"><img src="assets/project-relay-demo.svg" width="49%" alt="Relay · Real-time Chat live demo: https://relay-chat.bunbunchat.workers.dev" /></a>
+  <a href="https://anas2103-ecommerce.vercel.app"><img src="assets/project-ecommerce-demo.svg" width="49%" alt="Full Stack E-Commerce live demo: https://anas2103-ecommerce.vercel.app" /></a>
 </p>
 <p>
   <a href="https://github.com/Anas2103/AiJobBoard"><img src="assets/project-aijobboard.svg" width="49%" alt="HireMatch · AI Job Board: Job board where AI scores each CV against the job (0-100) with feedback. Laravel 12 · React 19 · OpenAI · JWT · Zustand" /></a>
@@ -27,8 +30,6 @@ Full stack developer. I build things for the fun of it. I use NixOS btw
   <a href="https://github.com/Anas2103/CarsRental"><img src="assets/project-carsrental.svg" width="49%" alt="CarsRental · Rental Manager: Car rental system with bookings, roles &amp; permissions and PayPal payments. Laravel 12 · React 19 · Spatie Permission · JWT" /></a>
   <a href="https://github.com/Anas2103/StudentsCourseManager"><img src="assets/project-students.svg" width="49%" alt="Student &amp; Course Manager: School management app with 4 roles, grades, attendance and EN / FR / AR. Laravel 11 · React 18 · Tailwind · Sanctum" /></a>
 </p>
-
-live demos: [Relay · Real-time Chat](https://relay-chat.bunbunchat.workers.dev) · [Full Stack E-Commerce](https://anas2103-ecommerce.vercel.app)
 <!-- projects:end -->
 
 ### GitHub stats

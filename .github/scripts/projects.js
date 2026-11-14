@@ -82,7 +82,6 @@ async function card(p) {
   }
   body += `<text x="22" y="${H - 38}" class="tech">${esc(p.tech)}</text>`;
   body += `<text x="22" y="${H - 16}" class="repo">github.com/${USER}/${esc(p.repo)} →</text>`;
-  if (p.demo) body += `<text x="${W - 22}" y="${H - 16}" class="demo" text-anchor="end">● live demo</text>`;
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
 <title>${esc(p.title)}</title>
@@ -109,26 +108,66 @@ ${body}
 `;
 }
 
+// clickable "live demo" bar shown under a card (links inside an svg can't be clicked on github,
+// so the bar is its own image wrapped in a link). same width as a card so they line up.
+const BAR_W = 380, BAR_H = 40;
+function demoBar(p) {
+  const host = p.demo ? new URL(p.demo).host : "";
+  const inner = p.demo
+    ? `<rect x=".75" y=".75" width="${BAR_W - 1.5}" height="${BAR_H - 1.5}" rx="12" fill="#050505" stroke="#262626" stroke-width="1.5"/>
+<circle class="dot" cx="26" cy="${BAR_H / 2}" r="4" fill="#98c379" filter="url(#glow)"/>
+<text x="40" y="${BAR_H / 2 + 4}" class="demo">live demo</text>
+<text x="${BAR_W - 20}" y="${BAR_H / 2 + 4}" class="host" text-anchor="end">${esc(host)} ↗</text>`
+    : ""; // empty spacer keeps the other card's bar aligned
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${BAR_W}" height="${BAR_H}" viewBox="0 0 ${BAR_W} ${BAR_H}">
+${p.demo ? `<title>${esc(p.title)} live demo</title>` : ""}
+<defs>
+  <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+</defs>
+<style>
+  text { font-family: ${FONT}; }
+  .demo { font-size: 12px; font-weight: 700; fill: #98c379; }
+  .host { font-size: 11px; fill: #7EBAE4; }
+  .dot { animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 50% { opacity: .35 } }
+</style>
+${inner}
+</svg>
+`;
+}
+
 // the README part between the two markers gets replaced
 function readmeBlock() {
   let md = "";
   for (let i = 0; i < PROJECTS.length; i += 2) {
+    const row = PROJECTS.slice(i, i + 2);
     md += "<p>\n";
-    for (const p of PROJECTS.slice(i, i + 2)) {
+    for (const p of row) {
       const alt = `${p.title}: ${p.lines.join(" ")} ${p.tech}`;
       md += `  <a href="https://github.com/${USER}/${p.repo}"><img src="assets/${p.file}.svg" width="49%" alt="${esc(alt)}" /></a>\n`;
     }
+    if (row.some(p => p.demo)) {
+      md += "  <br />\n";
+      for (const p of row) {
+        md += p.demo
+          ? `  <a href="${esc(p.demo)}"><img src="assets/${p.file}-demo.svg" width="49%" alt="${esc(p.title)} live demo: ${esc(p.demo)}" /></a>\n`
+          : `  <img src="assets/demo-spacer.svg" width="49%" alt="" />\n`;
+      }
+    }
     md += "</p>\n";
   }
-  const demos = PROJECTS.filter(p => p.demo);
-  if (demos.length) md += "\nlive demos: " + demos.map(p => `[${p.title}](${p.demo})`).join(" · ") + "\n";
   return md;
 }
 
 (async () => {
   for (const p of PROJECTS) {
     fs.writeFileSync(path.join(ROOT, "assets", p.file + ".svg"), await card(p));
+    if (p.demo) fs.writeFileSync(path.join(ROOT, "assets", p.file + "-demo.svg"), demoBar(p));
   }
+  fs.writeFileSync(path.join(ROOT, "assets", "demo-spacer.svg"), demoBar({}));
   const readmePath = path.join(ROOT, "README.md");
   const readme = fs.readFileSync(readmePath, "utf8");
   const updated = readme.replace(
