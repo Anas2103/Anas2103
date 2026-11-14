@@ -16,14 +16,19 @@ Full stack developer. I build things for the fun of it. I use NixOS btw
 
 <!-- projects:start -->
 <p>
-  <a href="https://github.com/Anas2103/Ecommerce"><img src="assets/project-ecommerce.svg" width="49%" alt="Full Stack E-Commerce: Online store with PayPal checkout, FR / EN / AR (RTL) and PWA support. Laravel 12 · React 19 · Redux Toolkit · MySQL" /></a>
-  <a href="https://github.com/Anas2103/Relay"><img src="assets/project-relay.svg" width="49%" alt="Relay · Real-time Chat: Instant chat with typing, presence, an admin panel and audit log. $0 hosting. React 19 · TypeScript · Workers · Durable Objects" /></a>
+  <a href="https://github.com/Anas2103/Relay"><img src="assets/project-relay.svg" width="49%" alt="Relay · Real-time Chat: Telegram-style chat with E2EE secret chats, voice/video calls. $0 hosting. React 19 · TypeScript · Workers · Durable Objects" /></a>
+  <a href="https://github.com/Anas2103/Ecommerce"><img src="assets/project-ecommerce.svg" width="49%" alt="Full Stack E-Commerce: Multi-vendor store with Stripe &amp; PayPal, FR / EN / AR (RTL), tested in CI. Laravel 12 · React 19 · Redux Toolkit · Stripe" /></a>
 </p>
 <p>
-  <a href="https://github.com/Anas2103/StudentsCourseManager"><img src="assets/project-students.svg" width="49%" alt="Student &amp; Course Manager: School management app with 4 roles, analytics dashboard and audit log. Laravel 11 · React 19 · Tailwind · Sanctum" /></a>
+  <a href="https://github.com/Anas2103/AiJobBoard"><img src="assets/project-aijobboard.svg" width="49%" alt="HireMatch · AI Job Board: Job board where AI scores each CV against the job (0-100) with feedback. Laravel 12 · React 19 · OpenAI · JWT · Zustand" /></a>
+  <a href="https://github.com/Anas2103/SmartCoursePlatform"><img src="assets/project-smartcourse.svg" width="49%" alt="SmartCourse · Learning Platform: Online courses with lessons, quizzes, PDF certificates and Stripe payments. Laravel 11 · React 18 · TanStack Query · Stripe" /></a>
+</p>
+<p>
+  <a href="https://github.com/Anas2103/CarsRental"><img src="assets/project-carsrental.svg" width="49%" alt="CarsRental · Rental Manager: Car rental system with bookings, roles &amp; permissions and PayPal payments. Laravel 12 · React 19 · Spatie Permission · JWT" /></a>
+  <a href="https://github.com/Anas2103/StudentsCourseManager"><img src="assets/project-students.svg" width="49%" alt="Student &amp; Course Manager: School management app with 4 roles, grades, attendance and EN / FR / AR. Laravel 11 · React 18 · Tailwind · Sanctum" /></a>
 </p>
 
-live demos: [Relay · Real-time Chat](https://relay-chat.bunbunchat.workers.dev)
+live demos: [Relay · Real-time Chat](https://relay-chat.bunbunchat.workers.dev) · [Full Stack E-Commerce](https://anas2103-ecommerce.vercel.app)
 <!-- projects:end -->
 
 ### GitHub stats

@@ -1,0 +1,47 @@
+name: update stats cards
+
+on:
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/scripts/projects.js
+
+permissions:
+  contents: write
+
+jobs:
+  cards:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: draw cards
+        run: node .github/scripts/cards.js
+        env:
+          STATS_TOKEN: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+
+      - name: draw project cards
+        run: node .github/scripts/projects.js
+
+      - name: draw snake
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/snake.svg?color_snake=#ffffff&color_dots=#151515,#3a3a3a,#6e6e6e,#b0b0b0,#ffffff&color_dot_border=#050505
+
+      - name: commit
+        run: |
+          cp dist/snake.svg assets/snake.svg
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md assets/
+          git diff --cached --quiet || git commit -m "update stats cards"
+          git push
